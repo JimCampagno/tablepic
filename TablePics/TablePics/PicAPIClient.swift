@@ -30,7 +30,7 @@ enum MethodType {
 }
 
 struct PicAPIClient: Request {
-    var baseURLString: String = "http://www.google.com"
+    var baseURLString: String = "https://johnph75.github.io/flatironVideos/"
     var baseURL: NSURL? = nil
     var method: MethodType = MethodType.GET
     var URLPath: String = "/"

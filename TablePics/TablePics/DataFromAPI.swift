@@ -15,13 +15,12 @@ struct DataFromAPI {
     let apiData: [String] = []
     
     func sendAPIRequest(request:NSURLRequest, completion: ([String]) -> ()) {
-        Alamofire.request(request).responseJSON { (response) in
+        Alamofire.request(request).responseString { (response) in
             switch response.result {
             case .Success(let responseObject):
                 var returnedData: [String] = []
-                let response = responseObject as! NSArray
-                let dataReturned = response[0]
-                returnedData.append(dataReturned as! String)
+                let response = responseObject as! NSString
+                returnedData.append(response as String)
                 print(responseObject)
                 completion(returnedData)
             default:
