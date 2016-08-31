@@ -48,13 +48,3 @@ extension Request {
     }
     
 }
-
-
-//
-//-    func buildRequest() -> NSURLRequest? {
-//    -        guard let baseURL = NSURL(string:self.baseURLString + self.URLPath) else { return nil }
-//    -        guard let URLComponents = NSURLComponents(URL:baseURL, resolvingAgainstBaseURL: true) else { return nil }
-//    -        guard let URL = URLComponents.URL else { return nil }
-//    -        let request = NSMutableURLRequest(URL:URL)
-//    -        request.HTTPMethod = method
-//    -        return request

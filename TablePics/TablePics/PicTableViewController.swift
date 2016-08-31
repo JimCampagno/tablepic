@@ -29,6 +29,9 @@ class PicTableViewController: UITableViewController{
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "MyTestCell")
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.tableView.reloadData()
+        })
         
         cell.textLabel?.text = "Row #\(indexPath.row)"
         //cell.detailTextLabel.text = "Subtitle #\(indexPath.row)"
